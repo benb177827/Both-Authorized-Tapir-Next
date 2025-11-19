@@ -171,63 +171,69 @@ const Home = (props) => {
               </div>
             </div>
             <div
-              role="group"
-              aria-label="Growth metrics"
-              className="hero-metric-left"
+              className="hero-metrics"
+              role="region"
+              aria-label="Creator impact metrics"
             >
-              <div className="metric-icon-wrapper">
-                <svg
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+              <div
+                role="group"
+                aria-label="Growth metrics"
+                className="hero-metric-left"
+              >
+                <div className="metric-icon-wrapper">
+                  <svg
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 0 24 24"
                   >
-                    <path d="M16 7h6v6"></path>
-                    <path d="m22 7l-8.5 8.5l-5-5L2 17"></path>
-                  </g>
-                </svg>
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M16 7h6v6"></path>
+                      <path d="m22 7l-8.5 8.5l-5-5L2 17"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div data-target="4200" className="metric-number">
+                  <span>0</span>
+                </div>
+                <div className="metric-label">
+                  <span>Creators launched</span>
+                </div>
               </div>
-              <div data-target="4200" className="metric-number">
-                <span>0</span>
-              </div>
-              <div className="metric-label">
-                <span>Creators launched</span>
-              </div>
-            </div>
-            <div
-              role="group"
-              aria-label="Conversion metrics"
-              className="hero-metric-right"
-            >
-              <div className="metric-icon-wrapper">
-                <svg
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m12 14l4-4M3.34 19a10 10 0 1 1 17.32 0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              </div>
-              <div data-target="87" className="metric-number">
-                <span>0</span>
-              </div>
-              <div className="metric-label">
-                <span>% avg. conversion</span>
+              <div
+                role="group"
+                aria-label="Conversion metrics"
+                className="hero-metric-right"
+              >
+                <div className="metric-icon-wrapper">
+                  <svg
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="m12 14l4-4M3.34 19a10 10 0 1 1 17.32 0"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <div data-target="87" className="metric-number">
+                  <span>0</span>
+                </div>
+                <div className="metric-label">
+                  <span>% avg. conversion</span>
+                </div>
               </div>
             </div>
           </div>
