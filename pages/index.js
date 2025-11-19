@@ -26,52 +26,43 @@ const Home = (props) => {
   display: grid;
   grid-template-columns: 1fr min(920px, 80%) 1fr;
   position: relative;
-  padding: var(--spacing-2xl) var(--spacing-lg);
-  background: var(--color-surface);
+  padding: clamp(2rem, 6vw, 4.5rem) var(--spacing-lg);
+  background: #ffffff;
   overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 #hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      color-mix(in srgb, var(--color-primary) 3%, transparent) 2px,
-      color-mix(in srgb, var(--color-primary) 3%, transparent) 4px
-    );
-  pointer-events: none;
-  opacity: 0.4;
-  z-index: 1;
+  display: none;
 }
-#value-props-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-  position: relative;
-}
-#onboarding-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-}
-#template-library-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-}
-#process-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-}
-#social-proof-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-}
+#value-props-section,
+#onboarding-section,
+#template-library-section,
+#process-section,
+#social-proof-section,
 #cta-section {
   padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+#value-props-section::before,
+#onboarding-section::before,
+#template-library-section::before,
+#process-section::before,
+#social-proof-section::before,
+#cta-section::before {
+  display: none;
+}
+#value-props-section > *,
+#onboarding-section > *,
+#template-library-section > *,
+#process-section > *,
+#social-proof-section > *,
+#cta-section > * {
+  position: relative;
+  z-index: 1;
 }
 @media (max-width: 991px) {
 #hero-section {
@@ -96,10 +87,27 @@ const Home = (props) => {
             ></Script>
           </div>
         </div>
-        <section id="hero-section" role="region" aria-labelledby="hero-heading">
+        <section
+          id="hero-section"
+          className="hero-section"
+          role="region"
+          aria-labelledby="hero-heading"
+        >
+          <div aria-hidden="true" className="hero-background">
+            <div className="hero-glow hero-glow-left"></div>
+            <div className="hero-glow hero-glow-right"></div>
+            <div className="hero-grid"></div>
+            <div className="hero-noise"></div>
+          </div>
           <div className="hero-container">
             <div className="hero-central-column">
               <div className="hero-panel">
+                <div className="hero-badge">
+                  <span className="hero-badge-pulse" aria-hidden="true"></span>
+                  <span>Creator-first template lab</span>
+                  <span className="hero-badge-divider">•</span>
+                  <span>New drop weekly</span>
+                </div>
                 <h1 id="hero-heading" className="home-hero-title hero-title">
                   {' '}
                   Seagai — Bespoke Course Templates for Influencers
@@ -1371,7 +1379,7 @@ to {opacity: 1;
 transform: translateX(0);}}@keyframes fadeInScale {from {opacity: 0;
 transform: scale(0.96);}
 to {opacity: 1;
-transform: scale(1);}}
+transform: scale(1);}}@keyframes heroOrbFloat {0% {transform: translate3d(0, 0, 0) scale(1);}50% {transform: translate3d(5%, -3%, 0) scale(1.05);}100% {transform: translate3d(0, 0, 0) scale(1);}}@keyframes gridDrift {from {transform: translate3d(0, 0, 0);}to {transform: translate3d(-5%, -10%, 0);}}@keyframes badgePulse {0% {transform: scale(0.9);opacity: 0.4;}50% {transform: scale(1.25);opacity: 1;}100% {transform: scale(0.9);opacity: 0.4;}}@keyframes gradientShift {0% {background-position: 0% 50%;}100% {background-position: 100% 50%;}}
         </style> `}
             ></Script>
           </div>
