@@ -29,52 +29,43 @@ const Home = (props) => {
   display: grid;
   grid-template-columns: 1fr min(920px, 80%) 1fr;
   position: relative;
-  padding: var(--spacing-2xl) var(--spacing-lg);
-  background: var(--color-surface);
+  padding: clamp(2rem, 6vw, 4.5rem) var(--spacing-lg);
+  background: #ffffff;
   overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 #hero-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      color-mix(in srgb, var(--color-primary) 3%, transparent) 2px,
-      color-mix(in srgb, var(--color-primary) 3%, transparent) 4px
-    );
-  pointer-events: none;
-  opacity: 0.4;
-  z-index: 1;
+  display: none;
 }
-#value-props-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-  position: relative;
-}
-#onboarding-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-}
-#template-library-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-}
-#process-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-}
-#social-proof-section {
-  padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
-}
+#value-props-section,
+#onboarding-section,
+#template-library-section,
+#process-section,
+#social-proof-section,
 #cta-section {
   padding: var(--section-gap) var(--spacing-lg);
-  background: var(--color-surface);
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+#value-props-section::before,
+#onboarding-section::before,
+#template-library-section::before,
+#process-section::before,
+#social-proof-section::before,
+#cta-section::before {
+  display: none;
+}
+#value-props-section > *,
+#onboarding-section > *,
+#template-library-section > *,
+#process-section > *,
+#social-proof-section > *,
+#cta-section > * {
+  position: relative;
+  z-index: 1;
 }
 @media (max-width: 991px) {
 #hero-section {
@@ -99,10 +90,27 @@ const Home = (props) => {
             ></Script>
           </div>
         </div>
-        <section id="hero-section" role="region" aria-labelledby="hero-heading">
+        <section
+          id="hero-section"
+          className="hero-section"
+          role="region"
+          aria-labelledby="hero-heading"
+        >
+          <div aria-hidden="true" className="hero-background">
+            <div className="hero-glow hero-glow-left"></div>
+            <div className="hero-glow hero-glow-right"></div>
+            <div className="hero-grid"></div>
+            <div className="hero-noise"></div>
+          </div>
           <div className="hero-container">
             <div className="hero-central-column">
               <div className="hero-panel">
+                <div className="hero-badge">
+                  <span className="hero-badge-pulse" aria-hidden="true"></span>
+                  <span>Creator-first template lab</span>
+                  <span className="hero-badge-divider">•</span>
+                  <span>New drop weekly</span>
+                </div>
                 <h1 id="hero-heading" className="home-hero-title hero-title">
                   {' '}
                   Seagai — Bespoke Course Templates for Influencers
@@ -168,66 +176,81 @@ const Home = (props) => {
                     />
                   </span>
                 </div>
-              </div>
-            </div>
-            <div
-              role="group"
-              aria-label="Growth metrics"
-              className="hero-metric-left"
-            >
-              <div className="metric-icon-wrapper">
-                <svg
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 0 24 24"
+                <div className="hero-trust-bar" aria-label="client highlights">
+                  <span>Preferred studio for</span>
+                  <div className="hero-trust-logos">
+                    <span>GlowLab</span>
+                    <span>Orbit</span>
+                    <span>Voxly</span>
+                    <span>Northstar</span>
+                  </div>
+                </div>
+                <div
+                  className="hero-metrics"
+                  role="region"
+                  aria-label="Creator impact metrics"
                 >
-                  <g
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                  <div
+                    role="group"
+                    aria-label="Growth metrics"
+                    className="hero-metric-left"
                   >
-                    <path d="M16 7h6v6"></path>
-                    <path d="m22 7l-8.5 8.5l-5-5L2 17"></path>
-                  </g>
-                </svg>
-              </div>
-              <div data-target="4200" className="metric-number">
-                <span>0</span>
-              </div>
-              <div className="metric-label">
-                <span>Creators launched</span>
-              </div>
-            </div>
-            <div
-              role="group"
-              aria-label="Conversion metrics"
-              className="hero-metric-right"
-            >
-              <div className="metric-icon-wrapper">
-                <svg
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m12 14l4-4M3.34 19a10 10 0 1 1 17.32 0"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              </div>
-              <div data-target="87" className="metric-number">
-                <span>0</span>
-              </div>
-              <div className="metric-label">
-                <span>% avg. conversion</span>
+                    <div className="metric-icon-wrapper">
+                      <svg
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <g
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M16 7h6v6"></path>
+                          <path d="m22 7l-8.5 8.5l-5-5L2 17"></path>
+                        </g>
+                      </svg>
+                    </div>
+                    <div data-target="4200" className="metric-number">
+                      <span>0</span>
+                    </div>
+                    <div className="metric-label">
+                      <span>Creators launched</span>
+                    </div>
+                  </div>
+                  <div
+                    role="group"
+                    aria-label="Conversion metrics"
+                    className="hero-metric-right"
+                  >
+                    <div className="metric-icon-wrapper">
+                      <svg
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="m12 14l4-4M3.34 19a10 10 0 1 1 17.32 0"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div data-target="87" className="metric-number">
+                      <span>0</span>
+                    </div>
+                    <div className="metric-label">
+                      <span>% avg. conversion</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1368,7 +1391,7 @@ to {opacity: 1;
 transform: translateX(0);}}@keyframes fadeInScale {from {opacity: 0;
 transform: scale(0.96);}
 to {opacity: 1;
-transform: scale(1);}}
+transform: scale(1);}}@keyframes heroOrbFloat {0% {transform: translate3d(0, 0, 0) scale(1);}50% {transform: translate3d(5%, -3%, 0) scale(1.05);}100% {transform: translate3d(0, 0, 0) scale(1);}}@keyframes gridDrift {from {transform: translate3d(0, 0, 0);}to {transform: translate3d(-5%, -10%, 0);}}@keyframes badgePulse {0% {transform: scale(0.9);opacity: 0.4;}50% {transform: scale(1.25);opacity: 1;}100% {transform: scale(0.9);opacity: 0.4;}}@keyframes gradientShift {0% {background-position: 0% 50%;}100% {background-position: 100% 50%;}}
         </style> `}
             ></Script>
           </div>
@@ -1580,12 +1603,12 @@ transform: scale(1);}}
           }
           .home-container24 {
             right: 50px;
-            border: 1px solid #ffffff5c;
+            border: 1px solid rgba(0, 0, 0, 0.12);
             bottom: 30px;
             display: flex;
             z-index: 22;
             position: fixed;
-            box-shadow: 5px 5px 10px 0px rgba(31, 31, 31, 0.4);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             min-height: auto;
             align-items: center;
             padding-top: 8px;
@@ -1593,15 +1616,15 @@ transform: scale(1);}}
             border-radius: 8px;
             padding-right: 12px;
             padding-bottom: 8px;
-            backdrop-filter: blur(6px);
-            background-color: rgba(41, 41, 41, 0.41);
+            backdrop-filter: none;
+            background-color: #ffffff;
           }
           .home-icon59 {
             width: 24px;
             margin-right: 4px;
           }
           .home-text59 {
-            color: white;
+            color: #111111;
             font-size: 13px;
             font-style: normal;
             font-weight: 500;
