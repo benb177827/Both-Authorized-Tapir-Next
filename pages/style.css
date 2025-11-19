@@ -1656,7 +1656,7 @@
   flex-direction: column;
   justify-content: center;
 }
- 
+
 .hero-central-column {
   width: 100%;
   display: flex;
@@ -1664,37 +1664,28 @@
   flex-direction: column;
   justify-content: center;
 }
- 
-.hero-metric-left {
-  left: var(--spacing-4xl);
-  color: var(--color-on-surface);
-  width: min(320px, 28%);
-  border: 1px solid var(--color-border);
-  padding: var(--spacing-lg);
-  z-index: 3;
-  position: absolute;
-  animation: slideInLeft var(--animation-duration-standard)
-      var(--animation-curve-primary) 400ms backwards;
-  transform: translateY(-8%);
-  background: var(--color-surface-elevated);
-  box-shadow: var(--shadow-level-3);
-  transition: box-shadow var(--animation-duration-fast)
-        var(--animation-curve-primary),
-      transform var(--animation-duration-fast) var(--animation-curve-primary);
-  border-radius: var(--border-radius-lg);
+
+.hero-metrics {
+  width: 100%;
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  justify-content: center;
+  flex-wrap: wrap;
 }
- 
+
+.hero-metric-left,
 .hero-metric-right {
   color: var(--color-on-surface);
-  right: var(--spacing-4xl);
-  width: min(320px, 28%);
+  flex: 1 1 260px;
+  max-width: 360px;
   border: 1px solid var(--color-border);
   padding: var(--spacing-lg);
   z-index: 3;
-  position: absolute;
-  animation: slideInRight var(--animation-duration-standard)
-      var(--animation-curve-primary) 480ms backwards;
-  transform: translateY(6%);
+  position: relative;
+  animation: slideInUp var(--animation-duration-standard)
+      var(--animation-curve-primary) 400ms backwards;
+  transform: none;
   background: var(--color-surface-elevated);
   box-shadow: var(--shadow-level-3);
   transition: box-shadow var(--animation-duration-fast)
@@ -3092,23 +3083,15 @@
   .hero-container {
     grid-column: 1;
   }
-  .hero-metric-left {
-    left: auto;
-    right: auto;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    max-width: 320px;
-    transform: none;
+  .hero-metrics {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--spacing-lg);
   }
+  .hero-metric-left,
   .hero-metric-right {
-    left: auto;
-    right: auto;
+    max-width: none;
     width: 100%;
-    margin: 0 auto;
-    position: relative;
-    max-width: 320px;
-    transform: none;
   }
   .hero-panel {
     padding: var(--spacing-2xl);
