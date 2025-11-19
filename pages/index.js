@@ -14,10 +14,7 @@ const Home = (props) => {
         <Head>
           <title>Both Authorized Tapir</title>
           <meta property="og:title" content="Both Authorized Tapir" />
-          <link
-            rel="canonical"
-            href="https://both-authorized-tapir-sr7a9y.teleporthq.app/"
-          />
+          <link rel="canonical" href="/" />
         </Head>
         <Navigation></Navigation>
         <div className="home-container11">
@@ -176,80 +173,71 @@ const Home = (props) => {
                     />
                   </span>
                 </div>
-                <div className="hero-trust-bar" aria-label="client highlights">
-                  <span>Preferred studio for</span>
-                  <div className="hero-trust-logos">
-                    <span>GlowLab</span>
-                    <span>Orbit</span>
-                    <span>Voxly</span>
-                    <span>Northstar</span>
-                  </div>
+              </div>
+            </div>
+            <div
+              className="hero-metrics"
+              role="region"
+              aria-label="Creator impact metrics"
+            >
+              <div
+                role="group"
+                aria-label="Growth metrics"
+                className="hero-metric-left"
+              >
+                <div className="metric-icon-wrapper">
+                  <svg
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M16 7h6v6"></path>
+                      <path d="m22 7l-8.5 8.5l-5-5L2 17"></path>
+                    </g>
+                  </svg>
                 </div>
-                <div
-                  className="hero-metrics"
-                  role="region"
-                  aria-label="Creator impact metrics"
-                >
-                  <div
-                    role="group"
-                    aria-label="Growth metrics"
-                    className="hero-metric-left"
+                <div data-target="4200" className="metric-number">
+                  <span>0</span>
+                </div>
+                <div className="metric-label">
+                  <span>Creators launched</span>
+                </div>
+              </div>
+              <div
+                role="group"
+                aria-label="Conversion metrics"
+                className="hero-metric-right"
+              >
+                <div className="metric-icon-wrapper">
+                  <svg
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 0 24 24"
                   >
-                    <div className="metric-icon-wrapper">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M16 7h6v6"></path>
-                          <path d="m22 7l-8.5 8.5l-5-5L2 17"></path>
-                        </g>
-                      </svg>
-                    </div>
-                    <div data-target="4200" className="metric-number">
-                      <span>0</span>
-                    </div>
-                    <div className="metric-label">
-                      <span>Creators launched</span>
-                    </div>
-                  </div>
-                  <div
-                    role="group"
-                    aria-label="Conversion metrics"
-                    className="hero-metric-right"
-                  >
-                    <div className="metric-icon-wrapper">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="m12 14l4-4M3.34 19a10 10 0 1 1 17.32 0"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        ></path>
-                      </svg>
-                    </div>
-                    <div data-target="87" className="metric-number">
-                      <span>0</span>
-                    </div>
-                    <div className="metric-label">
-                      <span>% avg. conversion</span>
-                    </div>
-                  </div>
+                    <path
+                      d="m12 14l4-4M3.34 19a10 10 0 1 1 17.32 0"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <div data-target="87" className="metric-number">
+                  <span>0</span>
+                </div>
+                <div className="metric-label">
+                  <span>% avg. conversion</span>
                 </div>
               </div>
             </div>
@@ -1549,32 +1537,6 @@ transform: scale(1);}}@keyframes heroOrbFloat {0% {transform: translate3d(0, 0, 
           </div>
         </div>
         <Footer></Footer>
-        <a href="https://play.teleporthq.io/signup">
-          <div aria-label="Sign up to TeleportHQ" className="home-container24">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 19 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="home-icon59"
-            >
-              <path
-                d="M9.1017 4.64355H2.17867C0.711684 4.64355 -0.477539 5.79975 -0.477539 7.22599V13.9567C-0.477539 15.3829 0.711684 16.5391 2.17867 16.5391H9.1017C10.5687 16.5391 11.7579 15.3829 11.7579 13.9567V7.22599C11.7579 5.79975 10.5687 4.64355 9.1017 4.64355Z"
-                fill="#B23ADE"
-              ></path>
-              <path
-                d="M10.9733 12.7878C14.4208 12.7878 17.2156 10.0706 17.2156 6.71886C17.2156 3.3671 14.4208 0.649963 10.9733 0.649963C7.52573 0.649963 4.73096 3.3671 4.73096 6.71886C4.73096 10.0706 7.52573 12.7878 10.9733 12.7878Z"
-                fill="#FF5C5C"
-              ></path>
-              <path
-                d="M17.7373 13.3654C19.1497 14.1588 19.1497 15.4634 17.7373 16.2493L10.0865 20.5387C8.67402 21.332 7.51855 20.6836 7.51855 19.0968V10.5141C7.51855 8.92916 8.67402 8.2807 10.0865 9.07221L17.7373 13.3654Z"
-                fill="#2874DE"
-              ></path>
-            </svg>
-            <span className="home-text59">Built in TeleportHQ</span>
-          </div>
-        </a>
       </div>
       <style jsx>
         {`
@@ -1600,35 +1562,6 @@ transform: scale(1);}}@keyframes heroOrbFloat {0% {transform: translate3d(0, 0, 
           }
           .home-container23 {
             display: contents;
-          }
-          .home-container24 {
-            right: 50px;
-            border: 1px solid rgba(0, 0, 0, 0.12);
-            bottom: 30px;
-            display: flex;
-            z-index: 22;
-            position: fixed;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            min-height: auto;
-            align-items: center;
-            padding-top: 8px;
-            padding-left: 12px;
-            border-radius: 8px;
-            padding-right: 12px;
-            padding-bottom: 8px;
-            backdrop-filter: none;
-            background-color: #ffffff;
-          }
-          .home-icon59 {
-            width: 24px;
-            margin-right: 4px;
-          }
-          .home-text59 {
-            color: #111111;
-            font-size: 13px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 24px;
           }
         `}
       </style>

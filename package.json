@@ -9,7 +9,7 @@
     "start": "next start",
     "export": "next export"
   },
-  "author": "TeleportHQ",
+  "author": "Seagai",
   "license": "MIT",
   "dependencies": {
     "next": "^12.1.10",

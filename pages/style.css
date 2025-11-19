@@ -147,11 +147,6 @@ body {
   display: list-item;
 }
  
-.teleport-show {
-  display: flex !important;
-  transform: none !important;
-}
- 
 .thq-input {
   color: var(--dl-color-theme-neutral-dark);
   cursor: auto;
@@ -1618,17 +1613,10 @@ body {
 .hero-metrics {
   width: 100%;
   display: flex;
-  gap: var(--spacing-lg);
-  margin-top: 0;
-  justify-content: flex-start;
-  align-items: stretch;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  justify-content: center;
   flex-wrap: wrap;
-  padding: var(--spacing-lg);
-  border-radius: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background: #ffffff;
-  backdrop-filter: none;
-  box-shadow: none;
 }
 
 .hero-metric-left,
@@ -1636,16 +1624,15 @@ body {
   color: var(--color-on-surface);
   flex: 1 1 260px;
   max-width: 360px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
   padding: var(--spacing-lg);
   z-index: 3;
   position: relative;
   animation: slideInUp var(--animation-duration-standard)
       var(--animation-curve-primary) 400ms backwards;
   transform: none;
-  background: #ffffff;
-  box-shadow: none;
-  backdrop-filter: none;
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-level-3);
   transition: box-shadow var(--animation-duration-fast)
         var(--animation-curve-primary),
       transform var(--animation-duration-fast) var(--animation-curve-primary);
@@ -3144,7 +3131,6 @@ body {
     flex-direction: column;
     align-items: stretch;
     gap: var(--spacing-lg);
-    padding: var(--spacing-md);
   }
   .hero-metric-left,
   .hero-metric-right {
