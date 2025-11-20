@@ -2,12 +2,12 @@ import React from 'react'
 import Head from 'next/head'
 
 import Script from 'dangerous-html/react'
-import { useTranslations } from 'next-intl'
-
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
+import { useSiteSettings } from '../site-settings-context'
 
 const Home = (props) => {
+  const { settings } = useSiteSettings()
   return (
     <>
       <div className="home-container10">
@@ -104,13 +104,13 @@ const Home = (props) => {
               <div className="hero-panel">
                 <div className="hero-badge">
                   <span className="hero-badge-pulse" aria-hidden="true"></span>
-                  <span>Creator-first template lab</span>
+                  <span>{settings.heroBadge}</span>
                   <span className="hero-badge-divider">•</span>
-                  <span>New drop weekly</span>
+                  <span>{settings.heroBadgeSecondary}</span>
                 </div>
                 <h1 id="hero-heading" className="home-hero-title hero-title">
                   {' '}
-                  Seagai — Bespoke Course Templates for Influencers
+                  {settings.heroTitle}
                   <span
                     dangerouslySetInnerHTML={{
                       __html: ' ',
@@ -119,9 +119,7 @@ const Home = (props) => {
                 </h1>
                 <p className="hero-copy">
                   {' '}
-                  Launch high-converting courses fast with designer-built
-                  templates tailored to your voice. Modern, modular, and ready
-                  to fill.
+                  {settings.heroCopy}
                   <span
                     dangerouslySetInnerHTML={{
                       __html: ' ',
@@ -164,8 +162,7 @@ const Home = (props) => {
                 <div className="hero-helper-text">
                   <span>
                     {' '}
-                    Start with a template: headline, outcomes, modules, pricing
-                    — all ready in seconds.
+                    {settings.heroHelper}
                     <span
                       dangerouslySetInnerHTML={{
                         __html: ' ',
